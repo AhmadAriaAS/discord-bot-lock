@@ -26,12 +26,14 @@ module.exports = (client, editor) => {
       channel.permissionOverwrites.edit(`1014147463600406678`, {
         ViewChannel: true,
       });
+      channel.send({content: `Channel <#${editor.get("Discord.User.guild.lock-channel.id")}> has been Enabled`})
       console.log(`Channel has been Enabled`)
     }
     if (Rawtime == timeEnd) {
       channel.permissionOverwrites.edit(`1014147463600406678`, {
         ViewChannel: false,
       });
+      channel.send({content: `Channel <#${editor.get("Discord.User.guild.lock-channel.id")}> has been Disabled`})
       console.log(`Channel has been Disabled`)
     }
   }, 1000);
